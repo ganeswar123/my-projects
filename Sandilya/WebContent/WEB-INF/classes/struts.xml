@@ -1,0 +1,161 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+<include file="struts-default.xml"></include>
+<constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory"/>
+
+<package name="default" namespace="/" extends="struts-default">
+<!--Interceptor Start-->
+
+ <interceptors>
+            <interceptor name="login" class="com.sgo.intercepter.LoginInterceptor" />
+            
+            <interceptor-stack name="defaultLoginStack">
+                                <interceptor-ref name="servletConfig" />
+                                <interceptor-ref name="params" />
+                                <interceptor-ref name="login" />
+                                <interceptor-ref name="prepare" />
+                                <interceptor-ref name="chain" />
+                                <interceptor-ref name="modelDriven" />
+                                <interceptor-ref name="fileUpload" />
+                                <interceptor-ref name="staticParams" />
+                                <interceptor-ref name="params" />
+                                <interceptor-ref name="conversionError" />
+                                <interceptor-ref name="validation" />
+                                <interceptor-ref name="workflow" />
+                        </interceptor-stack>
+
+                        <interceptor-stack name="defaultInsecureStack">
+                                <interceptor-ref name="servletConfig" />
+                                <interceptor-ref name="params" />
+                                <interceptor-ref name="prepare" />
+                                <interceptor-ref name="chain" />
+                                <interceptor-ref name="modelDriven" />
+                                <interceptor-ref name="fileUpload" />
+                                <interceptor-ref name="staticParams" />
+                                <interceptor-ref name="params" />
+                                <interceptor-ref name="conversionError" />
+                                <interceptor-ref name="validation" />
+                                <interceptor-ref name="workflow" />
+                        </interceptor-stack>
+            
+</interceptors>
+<!--Interceptor End-->
+
+<!-- Make the defaultLoginStack the default one used for all actions unless otherwise configured. -->
+<default-interceptor-ref name="defaultLoginStack" />
+
+
+ <default-action-ref name="index" />
+
+<!--Global Result Start-->
+        <global-results>
+            <result name="login">login.jsp</result>
+            <result name="login-success">index.jsp</result>
+        </global-results>
+<!--Global Result End-->
+
+        <action name="index">
+            <result name="input">index.jsp</result>
+            <result name="success">index.jsp</result>
+        </action>
+
+
+
+<!-- Employee Related Action Start -->
+ 		<action name="*/.jsp">
+            <result name="success">login.jsp</result>
+        </action>
+		<action name="addEmployeeAction" 
+			class="employeeAction" method="addEmployee">
+		    <result name="success">employee_success.jsp</result>
+		    <result name="input">employee_create.jsp</result>
+		</action>
+ 
+		<action name="listEmployeeAction"
+			class="employeeAction" method="listEmployee" >
+		    <result name="input">employee_list.jsp</result>
+		    <result name="success">employee_list.jsp</result>
+		</action>
+		<action name="getEmployeeAction"
+			class="employeeAction" method="getEmployee" >
+		    <result name="input">employee_Detail.jsp</result>
+		    <result name="success">employee_Detail.jsp</result>
+		</action>
+		<action name="searchEmployeeAction"
+			class="searchEmployeeAction" method="searchEmployee" >
+		    <result name="success">employee_search.jsp</result>
+		    <result name="input">employee_search.jsp</result>
+		</action>
+		<action name="updateEmployeeAction"
+			class="employeeAction" method="updateEmployee" >
+			<result name="success" type="redirect">jsp/getEmployeeAction</result>
+<!--		    <result name="success">jsp/employee_Detail.jsp</result>-->
+		    <result name="input">employee_Detail.jsp</result>
+		</action>
+		<action name="deleteEmployeeAction"
+			class="employeeAction" method="deleteEmployee" >
+		    <result name="success" type="redirect">jsp/listEmployeeAction</result>
+		    <result name="input" type="redirect">searchEmployeeAction</result>
+		</action>
+<!-- Employee Related Action End -->
+<!-- Student Related Action Start -->
+		<action name="addStudentAction" 
+			class="studentAction" method="addStudent">
+		    <result name="success">student.jsp</result>
+		</action>
+ 
+		<action name="listStudentAction"
+			class="studentAction" method="listStudent" >
+		    <result name="success">student.jsp</result>
+		</action>
+		<action name="searchStudentAction"
+			class="searchStudentAction" method="searchStudent" >
+		    <result name="success">serach_student.jsp</result>
+		</action>
+<!-- Student Related Action End -->
+<!-- Transaction  Related Action Start -->
+
+     <action name="addExpenditureAction"
+			class="expenditureAction" method="addExpenditure" >
+		    <result name="success">expenditure_sucess.jsp</result>
+		    <result name="input" >addExpenditure.jsp</result>
+		</action>
+		<action name="getExpenditureAction"
+			class="expenditureAction" method="getExpenditure" >
+		    <result name="input">expenditure_Detail.jsp</result>
+		    <result name="success">expenditure_Detail.jsp</result>
+		</action>
+		<action name="listExpenditureAction"
+			class="expenditureAction" method="listExpenditure" >
+		    <result name="success">expenditure_list.jsp</result>
+		    <result name="input" type="redirect">addExpenditure.jsp</result>
+		</action>
+		<action name="updateExpenditureAction"
+			class="expenditureAction" method="updateExpenditure" >
+		    <result name="success">expenditure_list.jsp</result>
+		    <result name="input">expenditure_Detail.jsp</result>
+		</action>
+		<action name="searchExpenditureAction"
+			class="searchExpenditureAction" method="searchExpenditure" >
+	   	    <result name="success">expenditure_search.jsp</result>
+		    <result name="input">expenditure_search.jsp</result>
+		</action>
+
+
+<!-- Transaction Related Action End -->
+
+ 
+		<action name="logoutAction"
+			class="logoutAction">
+		    <result name="success">login.jsp</result>
+		</action>
+ 
+ 
+	</package>
+	
+	
+	
+</struts>

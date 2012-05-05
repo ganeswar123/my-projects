@@ -1,0 +1,16 @@
+@CHARSET "ISO-8859-1";
+
+.errorMessage {
+    color: red;
+    font-size: 0.8em;
+}
+#appName {
+    color: white;
+    font-size: 1.8em;
+}
+
+#pageTitle {
+    font-size: 1.4em;
+    color: #dfd;
+    clear: none;
+}

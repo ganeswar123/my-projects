@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.sgo.dto.emp.EmployeeImpl" 
+		table="employee" catalog="sandilya">
+        <id name="empID" type="string">
+            <column name="EMPLOYEE_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="firstName" type="string">
+            <column name="FIRST_NAME" length="45" not-null="true" />
+        </property>
+        <property name="middleName" type="string">
+            <column name="MIDDLE_NAME" length="45" not-null="false" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="LAST_NAME" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" not-null="true" />
+        </property>
+        <property name="phone" type="string">
+            <column name="PHONE" not-null="true" />
+        </property>
+        <property name="hireDate" type="timestamp">
+            <column name="HIRE_DATE" length="19"/>
+        </property>
+        <property name="fireDate" type="timestamp">
+            <column name="FIRE_DATE" length="19"/>
+        </property>
+        <property name="dob" type="timestamp">
+            <column name="DOB" length="19"  />
+        </property>
+        <property name="gender" type="string">
+            <column name="SEX" />
+        </property>
+        <set name="address" table="address" inverse="true" lazy="false">
+            <key column="PERSON_ID"/>
+            <one-to-many class="com.sgo.dto.address.AddressImpl"/>
+        </set>
+        <many-to-one name="organisation" class = "com.sgo.dto.organisation.OrganisationImpl" column="ORGANISATION_ID" lazy="false" update="true" insert="false" fetch="select"/>
+<!--        <one-to-one name="organisation"  class="com.sgo.dto.organisation.OrganisationImpl" property-ref="ID" 
+cascade="all"/>-->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+<!-- ########################################################################################	-->
+
+<!--Declaration of Service Imp Object Start-->
+	<bean id="empService" class="com.sgo.service.emp.EmployeeServiceImpl" >
+		<property name="employeeDAO" ref="employeeDAO" />
+	</bean>
+	<bean id="studentService" class="com.sgo.service.student.StudentServiceImpl" >
+		<property name="studentDAO" ref="studentDAO" />
+	</bean>
+	<bean id="loginService" class="com.sgo.service.login.LoginServiceImpl" >
+		<property name="loginDAO" ref="loginDAO" />
+	</bean>
+	
+	<!--Transaction  Start-->
+	<bean id="transactionService" class="com.sgo.service.transaction.TransactionServiceImpl" >
+		<property name="transactionDAO" ref="transactionDAO" />
+	</bean>
+<!--Declaration of Service Imp Object End-->
+
+<!-- ########################################################################################	-->
+ 
+</beans>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.sgo.dto.emp.CardImpl" 
+		table="card" catalog="sandilya">
+        <id name="cardID" type="java.lang.Long">
+            <column name="CARD_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="cardNO" type="string">
+            <column name="CARD_NO" length="45" />
+        </property>
+        <property name="issueDate" type="tiemstamp">
+            <column name="ISSUE_DATE" length="45" />
+        </property>
+        <property name="expired" type="string">
+            <column name="ISEXPIRED"  />
+        </property>
+         </class>
+</hibernate-mapping>

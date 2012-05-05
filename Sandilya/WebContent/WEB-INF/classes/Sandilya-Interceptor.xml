@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+<!-- ########################################################################################	-->
+
+<!--Declaration of Interceptor Classes Object Start--> 
+ 	<bean id="loginInterceptor" scope="singleton" class="com.sgo.intercepter.LoginInterceptor">
+    <property name="securityManager"><ref local="securityManager" /></property>
+	</bean>
+ 	<bean id="securityManager" scope="singleton" class="com.sgo.security.impl.SecurityManagerImpl">
+    <property name="loginService" ref="loginService"></property>
+	</bean>
+<!--Declaration of Interceptor Classes Object End--> 
+
+<!-- ########################################################################################	-->
+
+</beans>

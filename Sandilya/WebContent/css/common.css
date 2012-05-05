@@ -1,0 +1,238 @@
+body.bgcolorNoMargins { /*background: "#e8eefa";*/
+	background: "#ffffff";
+	font: normal 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	margin: 0 0 0 0;
+}
+
+body.bgcolorMargins {
+	background: "#ffffff";
+	font: normal 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+}
+
+table.navigationBanner {
+	border: 0;
+	background-color: teal;
+	margin-left: 1px;
+	margin-right: 1px;
+	margin-bottom: 1px;
+	text-align: left;
+}
+
+table.navigationBanner td {
+	vertical-align: middle;
+	text-align: left;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	color: white;
+}
+
+table.pageName {
+	width: "100%";
+	border: 0;
+	background-color: '#c9d7f1';
+	margin: 1 1 1 1;
+	text-align: left;
+}
+
+table.pageName td {
+	vertical-align: middle;
+	text-align: left;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #0A4A7A;
+}
+
+form.maincontents {
+	margin: 0 0 0 0;
+}
+
+td.mainContentsText {
+	font: normal 14px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	/*color: #4f6b72;*/
+	color: 'black';
+}
+
+textarea.mainContentsText {
+	font: normal 14px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	/*color: #4f6b72;*/
+	color: 'black';
+}
+
+input.mainContentsText {
+	font: normal 14px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	/*color: #4f6b72;*/
+	color: 'black';
+	border: '1px solid #4f6b72';
+}
+
+input.mainContentsText text:HOVER {
+	color: #000000;
+}
+
+input.btn {
+	color: #0A4A7A;
+	font: bold 84% 'trebuchet ms', helvetica, sans-serif;
+	background-color: #A3D1FF;
+	border: 1px solid;
+	/*border-color: #336699 #336699 #336699 #336699;*/
+}
+
+input.btnhov {
+	border-color: #007ACC #007ACC #007ACC #007ACC;
+}
+
+input.txt {
+	background-color: #e8eefa;
+	border: opx;
+}
+
+input[disabled] {
+	border: 1px solid #999;
+	/*background-color: #ddd;*/
+	background-color: #A3D1FF;
+	color: #ddd;
+	border: 1px solid;
+}
+
+input[readonly] {
+	border: 0px;
+	/*background-color: #ddd;*/
+	
+}
+
+table.manitable {
+	width: 100%;
+	/*max-height: 200px;
+	max-width: 800px;*/
+	border-left: 1px solid #C1DAD7;
+	border-collapse: collapse;
+	padding: 0;
+	margin: 0 0 0 0;
+}
+tr.middleline{
+	vertical-align: middle;
+	text-align: left;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #0A4A7A;
+	background:#c9d7f1;
+	nowrap:nowrap;
+	}
+th.manith {
+	font: bold 10px/22px "Trebuchet MS", Verdana, Arial, Helvetica,
+		sans-serif;
+	color: #4f6b72;
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	border-top: 1px solid #C1DAD7;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	text-align: left;
+	/*padding: 6px 10px 6px 10px;*/
+	padding: 1px 4px 1px 4px;
+	background: #CAE8EA;
+	vertical-align: middle;
+}
+
+th.manithhidden {
+	visibility: hidden;;
+	display: none;
+}
+
+td.manitd {
+	font: normal 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	letter-spacing: 1px;
+	padding: 1px 4px 1px 4px;
+	color: #4f6b72;
+	white-space: nowrap;
+}
+
+td.manitdhidden {
+	visibility: hidden;;
+	display: none;
+}
+
+select.maniselect {
+	font: normal 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	letter-spacing: 1px;
+	padding: 1px 4px 1px 4px;
+	color: #4f6b72;
+}
+
+#header {
+	background-color: #e8eefa;
+	/*#91A43D;*/
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+#container {
+	width: 80%;
+	background-color: #e8eefa;
+	/* #EBEBEB;*/
+	margin: 0 auto;
+	padding: 0;
+	text-align: left;
+}
+
+#sidebar { /*float: left;*/
+	width: 195;
+	vertical-align: top;
+	height: 100%;
+}
+
+#mainContent {
+	background-color: #e8eefa; /*#FFFFFF;*/
+	margin-left: 12em;
+	padding: 10px 20px 0 1em;
+	width: 829;
+	height: 100%;
+	vertical-align: top;
+}
+
+iframe {
+	border-width: 2px;
+	border-style: solid;
+	border-color: #c9d7f1;
+}
+
+.success,.error {
+	width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	border: 1px solid;
+	margin: 1x;
+	padding: 15px 10px 15px 65px;
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.success {
+	color: #4F8A10;
+	background-color: #DFF2BF;
+	background-image: url('../images/accepted_48.png');
+}
+
+.error {
+	color: #D8000C;
+	background-color: #FFBABA;
+	background-image: url('../images/cancel_48.png');
+}
+.sform {
+	background-color: #F9FFFF;
+	border-radius:10;
+	border-style: solid 1px red;
+}
+.forminside{
+font-weight: bold;
+}

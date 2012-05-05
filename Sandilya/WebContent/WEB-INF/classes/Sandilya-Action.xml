@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+<!-- ########################################################################################	-->
+
+<!--Declaration of Action Classes Object Start--> 
+ 	<bean id="employeeAction" scope="prototype" class="com.sgo.business.action.emp.EmployeeAction">
+		<property name="empService" ref="empService" />	
+		<property name="emp" ref="employee" />	
+	</bean>
+ 	<bean id="searchEmployeeAction" scope="prototype" class="com.sgo.business.action.emp.SearchEmployeeAction">
+		<property name="empService" ref="empService" />	
+	</bean>
+ 	<bean id="studentAction" scope="prototype" class="com.sgo.business.action.student.StudentAction">
+		<property name="studentService" ref="studentService" />	
+		<property name="student" ref="student" />	
+	</bean>
+ 	<bean id="searchStudentAction" scope="prototype" class="com.sgo.business.action.student.SearchStudentAction">
+		<property name="studentService" ref="studentService" />	
+	</bean>
+ 	<bean id="logoutAction" scope="prototype" class="com.sgo.business.action.login.LogOutAction"/>
+ 	
+ 	
+ 	
+ 	<!-- Transaction start  -->
+ 	
+ 	 	<bean id="expenditureAction" scope="prototype" class="com.sgo.business.action.expenditure.ExpenditureAction">
+		<property name="transService" ref="transactionService" />	
+		<property name="trans" ref="transaction" />	
+		</bean>
+		<bean id="searchExpenditureAction" scope="prototype" class="com.sgo.business.action.expenditure.SearchExpenditureAction">
+		<property name="transService" ref="trnasService" />	
+		</bean>
+	<!-- Transaction End  -->
+<!--Declaration of Action Classes Object End--> 
+
+<!-- ########################################################################################	-->
+
+</beans>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.sgo.dto.organisation.OrganisationImpl" 
+		table="organisation" catalog="sandilya">
+        <id name="ID" type="string">
+            <column name="ORGANISATION_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="organisationType" type="string">
+            <column name="ORGANISATION_TYPE" length="45"/>
+        </property>
+        <property name="organisationName" type="string">
+            <column name="ORGANISATION_NAME" length="45"  />
+        </property>
+        <set name="employee" table="employee" lazy="false">
+            <key column="ORGANISATION_ID"/>
+            <one-to-many class="com.sgo.dto.emp.EmployeeImpl"/>
+        </set>
+     </class>
+</hibernate-mapping>

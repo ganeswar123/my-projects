@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+<!-- ########################################################################################	-->
+
+<!-- Declaration of DAO object Start     -->
+   	<bean id="employeeDAO" class="com.sgo.dao.emp.impl.hibernate.EmployeeDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+   	<bean id="studentDAO" class="com.sgo.dao.student.impl.hibernate.StudentDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+   	<bean id="loginDAO" class="com.sgo.dao.login.impl.hibernate.LoginDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!--Transaction DAO  Mapping Start  -->
+	   	<bean id="transactionDAO" class="com.sgo.dao.transaction.impl.hibernate.TransactionDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+		</bean>
+	
+		<!--Transaction DAO  Mapping End  -->
+<!-- Declaration of DAO object End       -->
+
+<!-- ########################################################################################	-->
+</beans>

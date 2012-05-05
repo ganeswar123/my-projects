@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+<!-- Declaration of Model bean/dto object Start  -->
+   	<bean id="employee" class="com.sgo.dto.emp.EmployeeImpl" >
+   	<property name="organisation" ref="organisation"/>
+   	</bean>
+   	<bean id="student" class="com.sgo.dto.student.StudentImpl" />
+   	<bean id="organisation" class="com.sgo.dto.organisation.OrganisationImpl" />
+   	<bean id="address" class="com.sgo.dto.address.AddressImpl" />
+   	<bean id="transaction" class="com.sgo.dto.transaction.TransactionImpl" />
+<!-- Declaration of Model bean/dto object End    -->
+</beans>

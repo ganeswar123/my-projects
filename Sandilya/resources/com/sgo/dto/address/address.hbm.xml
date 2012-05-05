@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.sgo.dto.address.AddressImpl" 
+		table="address" catalog="sandilya">
+        <id name="addressID" type="java.lang.Long">
+            <column name="ADDRESS_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="addressType" type="string">
+            <column name="ADDRESS_TYPE" length="45"/>
+        </property>
+        <property name="firstName" type="string">
+            <column name="FIRST_NAME" length="45" not-null="true" />
+        </property>
+        <property name="middleName" type="string">
+            <column name="MIDDLE_NAME" length="45"/>
+        </property>
+        <property name="lastName" type="string">
+            <column name="LAST_NAME" not-null="true"/>
+        </property>
+        <property name="addressOne" type="string">
+            <column name="ADDRESSONE"/>
+        </property>
+        <property name="street" type="string">
+            <column name="STREET" />
+        </property>
+        <property name="dist" type="string">
+            <column name="DIST" />
+        </property>
+        <property name="state" type="string">
+            <column name="STATE" />
+        </property>
+        <property name="country" type="string">
+            <column name="COUNTRY" />
+        </property>
+        <property name="pin" type="java.lang.Long">
+            <column name="PIN" />
+        </property>
+    </class>
+</hibernate-mapping>

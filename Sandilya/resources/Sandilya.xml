@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+<!-- Declaration of Model bean/dto object Start  -->
+	<import resource="Sandilya-Model.xml"/>
+<!-- Declaration of Model bean/dto object End    -->
+
+<!-- Declaration of DAO object Start     -->
+	<import resource="Sandilya-DAO.xml"/>
+<!-- Declaration of DAO object End       -->
+
+<!--Declaration of Service Imp Object Start-->
+	<import resource="Sandilya-Service.xml"/>
+<!--Declaration of Service Imp Object End-->
+
+<!--Declaration of Action Classes Object Start--> 
+	<import resource="Sandilya-Action.xml"/>
+<!--Declaration of Action Classes Object End--> 
+
+<!--Declaration of Interceptor Classes  Start--> 
+	<import resource="Sandilya-Interceptor.xml"/>
+<!--Declaration of Interceptor Classes  End--> 
+
+
+
+
+ 
+ </beans>
